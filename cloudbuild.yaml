@@ -1,0 +1,60 @@
+steps:
+- name: 'ubuntu'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    apt-get update && apt-get install -y make
+
+- name: 'ubuntu'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    make run
+
+- name: 'ubuntu'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    cat ./run1.log
+
+
+# Optional: Set a timeout for the build
+timeout: '10m' # 10 minutes, adjust as needed
+
+# Optional: Specify the working directory
+# dir: 'my-project'  # Replace 'my-project' with your project directory
+
+# Optional: Define build triggers (e.g., on push to a branch)
+# triggers:
+#   github:
+#     branch: 'main' # Replace 'main' with your branch name
+
+# Optional: Define substitutions (variables)
+# substitutions:
+#   _MY_VARIABLE: 'my-value'
+
+# Optional: Service account permissions (if needed for accessing other GCP resources)
+# serviceAccount: 'your-service-account@your-project.iam.gserviceaccount.com'
+
+# Optional: Artifacts to be uploaded to Cloud Storage
+# artifacts:
+#   objects:
+#     - location: 'gs://$PROJECT_ID/my-artifacts/*'  # Replace with your bucket and path
+
+# Optional: Images to be pushed to Container Registry
+# images:
+#   - 'gcr.io/$PROJECT_ID/my-image'  # Replace with your image name
+
+# Optional: Cache directories to speed up subsequent builds
+# volumes:
+# - name: 'cache-volume'
+#   hostPath:
+#     path: /tmp/cache  # Or any other persistent directory
+# steps:
+# - name: 'ubuntu'
+#   entrypoint: 'bash'
+#   args: ['-c', 'make']
+#   volumes: ['
