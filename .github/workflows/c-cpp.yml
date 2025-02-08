@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run coremark
-      run: make XCFLAGS="-DMULTITHREAD=4   -DUSE_FORK"
+      run: make XCFLAGS="-DMULTITHREAD=8   -DUSE_FORK"
     - name: Show results
       run: cat ./run1.log
