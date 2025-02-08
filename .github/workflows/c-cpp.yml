@@ -1,4 +1,4 @@
-name: Check MD5s and make
+name: Coremark benchmarking of hosted runner
 on:
   push:
     branches: [ "main" ]
@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Check md5sums
-      run: md5sum -c coremark.md5
-    - name: make
-      run: make
+    - name: Run coremark
+      run: make run
+    - name: Show results
+      run: cat ./run1.log
