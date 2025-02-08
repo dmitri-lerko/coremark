@@ -399,4 +399,3 @@ Please refer to LICENSE.md in this repository for a description of your rights t
 # Copyright
 Copyright © 2009 EEMBC All rights reserved. 
 CoreMark is a trademark of EEMBC and EEMBC is a registered trademark of the Embedded Microprocessor Benchmark Consortium.
-
